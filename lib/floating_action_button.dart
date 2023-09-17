@@ -1,4 +1,4 @@
-import 'package:animated_floating_button/FloatingButtonProps.dart';
+import 'package:animated_floating_button_pro/floating_button_props.dart';
 import 'package:flutter/material.dart';
 
 class AnimatedFloatingButton extends StatelessWidget {
