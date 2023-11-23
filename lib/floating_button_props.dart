@@ -7,5 +7,11 @@ class FloatingButtonProps {
   final Function()? action;
   final BoxDecoration? labelDecoration;
 
-  const FloatingButtonProps({this.label, this.icon, this.customIcon, this.action, this.labelDecoration});
+  const FloatingButtonProps({
+    this.label,
+    this.icon,
+    this.customIcon,
+    this.action,
+    this.labelDecoration,
+  });
 }

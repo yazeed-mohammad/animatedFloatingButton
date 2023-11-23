@@ -73,10 +73,12 @@ class FloatingActionButtonScreen extends StatefulWidget {
   final Widget? closeIcon;
 
   @override
-  State<FloatingActionButtonScreen> createState() => _FloatingActionButtonScreenState();
+  State<FloatingActionButtonScreen> createState() =>
+      _FloatingActionButtonScreenState();
 }
 
-class _FloatingActionButtonScreenState extends State<FloatingActionButtonScreen> with SingleTickerProviderStateMixin {
+class _FloatingActionButtonScreenState extends State<FloatingActionButtonScreen>
+    with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
   late final Animation<double> _expandAnimation;
   bool _open = false;
@@ -118,7 +120,9 @@ class _FloatingActionButtonScreenState extends State<FloatingActionButtonScreen>
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: kToolbarHeight + kFloatingActionButtonMargin, horizontal: kFloatingActionButtonMargin),
+            padding: const EdgeInsets.symmetric(
+                vertical: kToolbarHeight + kFloatingActionButtonMargin,
+                horizontal: kFloatingActionButtonMargin),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -139,22 +143,31 @@ class _FloatingActionButtonScreenState extends State<FloatingActionButtonScreen>
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.end,
-                                  textDirection: widget.direction == TextDirection.rtl ? TextDirection.ltr : TextDirection.rtl,
+                                  textDirection:
+                                      widget.direction == TextDirection.rtl
+                                          ? TextDirection.ltr
+                                          : TextDirection.rtl,
                                   children: [
                                     FloatingActionButton(
                                       onPressed: child.action ?? () {},
-                                      child: child.customIcon ?? (child.icon != null ? Icon(child.icon) : null),
+                                      child: child.customIcon ??
+                                          (child.icon != null
+                                              ? Icon(child.icon)
+                                              : null),
                                     ),
                                     if (child.label != null)
                                       Container(
-                                        margin: const EdgeInsets.symmetric(horizontal: 8),
+                                        margin: const EdgeInsets.symmetric(
+                                            horizontal: 8),
                                         padding: const EdgeInsets.all(4),
                                         decoration: child.labelDecoration ??
                                             BoxDecoration(
                                               // color: Colors.white,
-                                              borderRadius: BorderRadius.circular(8),
+                                              borderRadius:
+                                                  BorderRadius.circular(8),
                                             ),
-                                        child: Text(child.label!, style: widget.labelStyle),
+                                        child: Text(child.label!,
+                                            style: widget.labelStyle),
                                       ),
                                     // const Spacer(),
                                   ],
