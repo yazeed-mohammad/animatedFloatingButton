@@ -13,19 +13,34 @@ A Flutter package to use animatedFloatingButton.
 ## Getting started
 You can use AnimatedFloatingButton by calling ```AnimatedFloatingButton``` .
 
+to avoid shadow padding issue set floatingActionButtonLocation
 
 ```
-FloatingActionButtonPage(
-  direction: ui.TextDirection.rtl,
-  isDismissible: true,
-  mainButtonColor: AppColors.pineGreen100,
-  shadowColor: const Color(0xff1D1D1B).withOpacity(0.5),
-  labelStyle: const TextStyle(color: Colors.white),
-  childrenProps: [
-    FloatingButtonProps(label: 'label', icon: Icons.abc, action: () => print('lable 1')),
-    FloatingButtonProps(label: 'label2', customIcon: const Text('A'), action: () => print('lable 2')),
-    FloatingButtonProps(label: 'label3', icon: Icons.access_time_outlined, action: () => print('lable 3')),
-    FloatingButtonProps(label: 'label4', icon: Icons.add_alert, action: () => print('lable 4')),
-  ],
-)
+floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+```
+
+Example
+```
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: AnimatedFloatingButton(
+        shape: const CircleBorder(),
+        padding: const EdgeInsets.all(16),
+        childrenProps: [
+          FloatingButtonProps(
+            label: "First",
+            icon: Icons.one_x_mobiledata,
+            action: () => ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("First"))),
+          ),
+          FloatingButtonProps(
+            label: "Second",
+            customIcon: const Text('2'),
+            labelDecoration: BoxDecoration(
+              color: Colors.green,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            labelStyle: const TextStyle(color: Colors.white),
+            action: () => ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("Second"))),
+          ),
+        ],
+      )
 ```

@@ -1,6 +1,6 @@
 name: animated_floating_button_pro
-description: A new Flutter package that provide AnimatedFloatingButton.
-version: 0.0.1
+description: A new Flutter package that provide AnimatedFloatingButton for that provide pretty animation for FloatingActionButton.
+version: 0.0.2
 homepage: https://github.com/yazeed-mohammad/animatedFloatingButton
 
 environment:
